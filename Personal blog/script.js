@@ -216,359 +216,14 @@
   );
 
   /* ----------------------------------------------------------------------
-     7. BLOG DATA
-        NOTE: sample posts — swap in your real writing here. `content` is
-        an array of simple blocks ({type:'p'|'h2'|'ul', ...}) rendered into
-        the in-page article view. Reading time is computed automatically
-        from word count, so you never need to update it by hand.
-  ---------------------------------------------------------------------- */
-  const posts = [
-    {
-      id: "local-llm-ollama",
-      title: "Running a Local LLM Chatbot with Ollama, FastAPI and LangChain",
-      category: "AI Tools",
-      date: "2026-06-20",
-      excerpt:
-        "Notes from building Ollama Chat — a fully local AI chatbot with no API keys and nothing sent to the cloud. What made local inference worth the setup.",
-      content: [
-        {
-          type: "p",
-          text: "Every hosted LLM API works fine until you want to run something offline, keep data private, or just stop watching a token meter. That is what pushed me to build a chatbot on top of Ollama instead of a cloud API.",
-        },
-        { type: "h2", text: "The stack" },
-        {
-          type: "ul",
-          items: [
-            "Ollama to pull and serve open models locally, no API key required",
-            "FastAPI as a thin backend routing chat requests to the local model",
-            "LangChain to manage prompt templates and conversation memory",
-            "A lightweight HTML front end so the whole thing runs from one machine",
-          ],
-        },
-        {
-          type: "p",
-          text: 'The biggest surprise was how usable a mid-sized open model is for everyday chat once you stop comparing it to a frontier hosted model and start comparing it to "nothing, because I do not want my data leaving this machine."',
-        },
-        { type: "h2", text: "What I would change next" },
-        {
-          type: "p",
-          text: "Streaming responses token-by-token instead of waiting for the full reply, and adding a simple retrieval step so the bot can answer questions about local documents, not just general chat.",
-        },
-      ],
-    },
-    {
-      id: "clean-data-for-ai",
-      title: "Why Clean Data Still Decides Whether Your AI Model Works",
-      category: "Applied AI",
-      date: "2026-05-14",
-      excerpt:
-        "Generative AI has not made data cleaning optional — if anything, a language model will confidently paper over messy inputs in ways a simple model never could.",
-      content: [
-        {
-          type: "p",
-          text: "It is tempting to assume a large model is smart enough to handle messy input. In practice, garbage in still means garbage out — it is just harder to notice, because the output reads fluently either way.",
-        },
-        { type: "h2", text: "The checklist I still run" },
-        {
-          type: "ul",
-          items: [
-            "Check for duplicate rows and near-duplicate records before they are embedded or fine-tuned on",
-            "Profile missing values by column, not just by overall count",
-            "Look for impossible values — negative ages, future dates",
-            "Confirm categorical columns actually mean what the schema says they mean",
-            "Sanity-check units before joining tables from different sources",
-          ],
-        },
-        {
-          type: "p",
-          text: "On a recent classification task, fixing one mislabelled category improved validation accuracy more than switching models did. The data is still the ceiling.",
-        },
-      ],
-    },
-    {
-      id: "generative-ai-entry-level",
-      title: "What Generative AI Actually Means for an Entry-Level Analyst",
-      category: "AI Careers",
-      date: "2026-04-21",
-      excerpt:
-        "Less about prompting a chatbot well, more about knowing when a language model is the wrong tool for a structured-data problem.",
-      content: [
-        {
-          type: "p",
-          text: "A lot of the noise around generative AI does not apply to day-to-day analyst work — most business questions are still answered with SQL, a join, and a well-chosen chart.",
-        },
-        { type: "h2", text: "Where it genuinely helps" },
-        {
-          type: "ul",
-          items: [
-            "Summarising long, unstructured feedback into themes",
-            "Drafting a first pass at documentation for a pipeline",
-            "Explaining an unfamiliar codebase quickly",
-            "Generating synthetic edge cases to stress-test a model",
-          ],
-        },
-        {
-          type: "p",
-          text: "Knowing when to reach for a language model — and when a simple aggregation query is the better answer — is turning out to be its own skill.",
-        },
-      ],
-    },
-    {
-      id: "rag-vs-fine-tuning",
-      title: "RAG vs Fine-Tuning: The Question I Get Asked Most",
-      category: "LLMs & Agents",
-      date: "2026-03-30",
-      excerpt:
-        "A practical way to decide between retrieval-augmented generation and fine-tuning, based on what actually changes in your data over time.",
-      content: [
-        {
-          type: "p",
-          text: "The honest answer is: start with retrieval-augmented generation (RAG), and only reach for fine-tuning once you have a very specific reason to.",
-        },
-        { type: "h2", text: "A simple way to decide" },
-        {
-          type: "ul",
-          items: [
-            "If the underlying facts change often — use RAG, so the model always reads current information",
-            "If you need the model to reliably follow a narrow output format or tone — fine-tuning helps",
-            "If you are not sure yet — RAG is cheaper to iterate on and easier to debug",
-          ],
-        },
-        {
-          type: "p",
-          text: 'Most of the "fine-tuning" problems I have seen were actually retrieval problems wearing a disguise — the model did not need new weights, it needed better context.',
-        },
-      ],
-    },
-    {
-      id: "internship-lessons",
-      title:
-        "Six Months Building AI Models as an Intern: What Actually Surprised Me",
-      category: "AI Careers",
-      date: "2026-02-10",
-      excerpt:
-        'Not the modelling — the amount of time spent on communication, and how often "done" meant something different than I expected.',
-      content: [
-        {
-          type: "p",
-          text: "Coming in, I assumed most of my time would be spent building models. In practice, a large share went into understanding exactly what a stakeholder meant by their question in the first place.",
-        },
-        { type: "h2", text: "Three things I would tell my past self" },
-        {
-          type: "ul",
-          items: [
-            "Ask what decision this analysis is meant to support, before writing code",
-            "A model that is trusted at 80% accuracy beats a 92% model nobody uses",
-            "Write down assumptions — someone will ask about them in three weeks",
-          ],
-        },
-        {
-          type: "p",
-          text: "None of this shows up in a course syllabus, but it shaped how I approach every AI project since.",
-        },
-      ],
-    },
-    {
-      id: "ai-agents-notes",
-      title: "What I Learned Giving an LLM Access to Tools",
-      category: "LLMs & Agents",
-      date: "2026-01-18",
-      excerpt:
-        "The difference between a chatbot and an agent is smaller than it sounds, and the failure modes are stranger than you expect.",
-      content: [
-        {
-          type: "p",
-          text: "Wiring an LLM up to call functions — search a database, hit an API, run a calculation — sounds like a small step from a chat interface. In practice, it changes how carefully you need to think about every tool you expose.",
-        },
-        { type: "h2", text: "Lessons from a first agent build" },
-        {
-          type: "ul",
-          items: [
-            'Narrow, well-named tools beat one giant "do anything" function every time',
-            "Always validate a tool's output before feeding it back into the model",
-            "Log every tool call — agent failures are much easier to debug with a trace",
-            "Assume the model will eventually call a tool with the wrong arguments, and design for that",
-          ],
-        },
-        {
-          type: "p",
-          text: 'The local chatbot I built with Ollama started as a simple Q&A tool; adding even one retrieval "tool" to it changed how I thought about the whole architecture.',
-        },
-      ],
-    },
-  ];
-
-  /* ----------------------------------------------------------------------
-     8. READING TIME CALCULATOR — average adult reading speed ~200 wpm
-  ---------------------------------------------------------------------- */
-  function calcReadingTime(contentBlocks) {
-    const words = contentBlocks
-      .map((block) =>
-        block.type === "ul" ? block.items.join(" ") : block.text,
-      )
-      .join(" ")
-      .trim()
-      .split(/\s+/).length;
-    const minutes = Math.max(1, Math.round(words / 200));
-    return `${minutes} min read`;
-  }
-
-  function formatDate(iso) {
-    return new Date(iso + "T00:00:00").toLocaleDateString("en-IN", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
-  }
-
-  /* ----------------------------------------------------------------------
-     9. BLOG HUB — render, filter, search
-  ---------------------------------------------------------------------- */
-  const blogGrid = document.getElementById("blogGrid");
-  const blogEmpty = document.getElementById("blogEmpty");
-  const filterGroup = document.getElementById("filterGroup");
-  const searchInput = document.getElementById("blogSearch");
-
-  let activeFilter = "all";
-  let searchTerm = "";
-
-  function renderBlogGrid() {
-    const filtered = posts.filter((post) => {
-      const matchesFilter =
-        activeFilter === "all" || post.category === activeFilter;
-      const haystack = (post.title + " " + post.excerpt).toLowerCase();
-      const matchesSearch = haystack.includes(searchTerm.toLowerCase());
-      return matchesFilter && matchesSearch;
-    });
-
-    blogGrid.innerHTML = "";
-    blogEmpty.hidden = filtered.length !== 0;
-
-    filtered.forEach((post, i) => {
-      const card = document.createElement("article");
-      card.className = "blog-card";
-      card.style.animationDelay = `${i * 60}ms`;
-      card.tabIndex = 0;
-      card.setAttribute("role", "button");
-      card.setAttribute("aria-label", `Read: ${post.title}`);
-
-      card.innerHTML = `
-        <div class="card-top">
-          <span class="card-category">${post.category}</span>
-          <span class="card-readtime">${calcReadingTime(post.content)}</span>
-        </div>
-        <h3 class="card-title">${post.title}</h3>
-        <p class="card-excerpt">${post.excerpt}</p>
-        <div class="card-footer">
-          <span class="card-date">${formatDate(post.date)}</span>
-          <span class="card-link">Read post →</span>
-        </div>
-      `;
-
-      card.addEventListener("click", () => openArticle(post));
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          openArticle(post);
-        }
-      });
-
-      blogGrid.appendChild(card);
-    });
-  }
-
-  filterGroup.addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-pill");
-    if (!btn) return;
-    filterGroup
-      .querySelectorAll(".filter-pill")
-      .forEach((p) => p.classList.remove("is-active"));
-    btn.classList.add("is-active");
-    activeFilter = btn.dataset.filter;
-    renderBlogGrid();
-  });
-
-  searchInput.addEventListener(
-    "input",
-    debounce((e) => {
-      searchTerm = e.target.value;
-      renderBlogGrid();
-    }, 150),
-  );
-
-  renderBlogGrid();
-
-  /* ----------------------------------------------------------------------
-     10. ARTICLE VIEW — opens in-page, drives the reading progress bar
-  ---------------------------------------------------------------------- */
-  const articleView = document.getElementById("articleView");
-  const articleBody = document.getElementById("articleBody");
-  const articleClose = document.getElementById("articleClose");
-  const progressBar = document.getElementById("progressBar");
-  const blogSection = document.getElementById("blog");
-
-  function renderBlockHTML(block) {
-    if (block.type === "p") return `<p>${block.text}</p>`;
-    if (block.type === "h2") return `<h2>${block.text}</h2>`;
-    if (block.type === "ul")
-      return `<ul>${block.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
-    return "";
-  }
-
-  function openArticle(post) {
-    articleBody.innerHTML = `
-      <p class="article-eyebrow">${post.category}</p>
-      <h1>${post.title}</h1>
-      <div class="article-meta">
-        <span>${formatDate(post.date)}</span>
-        <span>${calcReadingTime(post.content)}</span>
-        <span>By Shyam Saran</span>
-      </div>
-      <div class="article-content">
-        ${post.content.map(renderBlockHTML).join("")}
-      </div>
-    `;
-
-    blogSection.style.display = "none";
-    articleView.classList.add("is-open");
-    articleView.setAttribute("aria-hidden", "false");
-    window.scrollTo({
-      top: 0,
-      behavior: "instant" in window ? "instant" : "auto",
-    });
-    updateProgressBar();
-  }
-
-  function closeArticle() {
-    articleView.classList.remove("is-open");
-    articleView.setAttribute("aria-hidden", "true");
-    blogSection.style.display = "";
-    progressBar.style.width = "0%";
-    document.getElementById("blog").scrollIntoView({ behavior: "smooth" });
-  }
-
-  articleClose.addEventListener("click", closeArticle);
-
-  function updateProgressBar() {
-    if (!articleView.classList.contains("is-open")) return;
-    const scrollTop = window.scrollY;
-    const docHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
-  }
-
-  window.addEventListener("scroll", updateProgressBar, { passive: true });
-
-  /* ----------------------------------------------------------------------
-     11. PROJECTS — rendered from data so cards stay consistent
+     7. PROJECTS — rendered from data so cards stay consistent
   ---------------------------------------------------------------------- */
   const projects = [
     {
-      title: "Ollama Chat",
+      title: "OllamaChat",
       description:
         "A fully local AI chatbot built with FastAPI, LangChain and Ollama. Runs entirely on your machine — no API keys, no data sent to the cloud.",
-      tags: ["FastAPI", "LangChain", "Ollama"],
+      tags: ["FastAPI", "LangChain", "Ollama", "RAG"],
       repo: "https://github.com/Shyamseenu/ollamachat",
       demo: null,
       icon: "chat",
@@ -646,7 +301,57 @@
   });
 
   /* ----------------------------------------------------------------------
-     12. CONTACT FORM — client-side validation only (wire up a real
+     8. LIVE PROJECTS — deployed builds people can actually open and use.
+        NOTE: swap the `url` values below for your real live links (e.g.
+        Streamlit Cloud, Vercel, Render, Hugging Face Spaces).
+  ---------------------------------------------------------------------- */
+  const liveProjects = [
+    {
+      title: "OllamaChat",
+      description:
+        "A RAG-powered AI chatbot using FastAPI, LangChain, Google Gemini, and ChromaDB with secure user authentication, YAML-configurable personas, document upload, semantic search, conversation memory, and real-time streaming responses via Server-Sent Events (SSE).",
+      tags: ["FastAPI", "LangChain", "Google Gemini"],
+      url: "https://ollamachat-9wny.onrender.com",
+      repo: "https://github.com/Shyamseenu/ollamachat",
+      icon: "chat",
+    },
+  ];
+
+  const liveIcons = {
+    ...icons,
+    globe:
+      '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  };
+
+  const liveProjectGrid = document.getElementById("liveProjectGrid");
+  if (liveProjectGrid) {
+    liveProjects.forEach((proj, i) => {
+      const card = document.createElement("article");
+      card.className = "project-card";
+      card.style.animationDelay = `${i * 70}ms`;
+      card.innerHTML = `
+        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">${liveIcons[proj.icon] || liveIcons.globe}</svg></div>
+        <span class="live-badge">Live</span>
+        <h3 class="project-title">${proj.title}</h3>
+        <p class="project-desc">${proj.description}</p>
+        <div class="project-tags">${proj.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
+        <div class="project-links">
+          <a href="${proj.url}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${liveIcons.globe}</svg>
+            Visit live
+          </a>
+          <a href="${proj.repo}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.2-3.6a4.6 4.6 0 0 0-.1-3.5s-1-.3-3.2 1.3a11.4 11.4 0 0 0-6 0C6.2 1.5 5.2 1.8 5.2 1.8a4.6 4.6 0 0 0-.1 3.5A5.4 5.4 0 0 0 4 8.9c0 3.5 3 5.5 6 5.5a3.4 3.4 0 0 0-1 2.6V21"/></svg>
+            Source
+          </a>
+        </div>
+      `;
+      liveProjectGrid.appendChild(card);
+    });
+  }
+
+  /* ----------------------------------------------------------------------
+     9. CONTACT FORM — client-side validation only (wire up a real
          endpoint, e.g. Formspree or your own API, at the fetch() below)
   ---------------------------------------------------------------------- */
   const contactForm = document.getElementById("contactForm");
@@ -713,7 +418,25 @@
   });
 
   /* ----------------------------------------------------------------------
-     13. FOOTER YEAR
+     10. BACK TO TOP — floating button, bottom-right; appears after the
+         visitor scrolls past the hero, scrolls smoothly back to #home
+  ---------------------------------------------------------------------- */
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      backToTop.classList.toggle("is-visible", window.scrollY > 480);
+    },
+    { passive: true },
+  );
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* ----------------------------------------------------------------------
+     11. FOOTER YEAR
   ---------------------------------------------------------------------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

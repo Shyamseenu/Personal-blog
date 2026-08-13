@@ -6,7 +6,7 @@
     <title>Shyam Saran — Data Science &amp; AI</title>
     <meta
       name="description"
-      content="Personal site and blog of Shyam Saran, a Data Science &amp; AI graduate specializing in machine learning, analytics and generative AI."
+      content="Personal site and portfolio of Shyam Saran, a Data Science &amp; AI graduate specializing in machine learning, analytics and generative AI."
     />
 
     <!-- Typography: a grotesk display face for headings, a humanist sans for body text,
@@ -21,9 +21,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ================= READING PROGRESS BAR (article view only) ================= -->
-    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-
     <!-- ================= HEADER / NAV ================= -->
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
@@ -36,7 +33,7 @@
           <a href="#experience" class="nav-link">Experience</a>
           <a href="#education" class="nav-link">Education</a>
           <a href="#projects" class="nav-link">Projects</a>
-          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#live-projects" class="nav-link">Live Projects</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
@@ -92,7 +89,7 @@
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#education" class="nav-link">Education</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#live-projects" class="nav-link">Live Projects</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </header>
@@ -106,6 +103,92 @@
         <div class="container hero-inner">
           <div class="hero-copy fade-in">
             <p class="eyebrow">Bengaluru, India · Data Science &amp; AI</p>
+
+            <ul class="hero-social" aria-label="Profile links">
+              <li>
+                <a href="mailto:the.shyamsaran@gmail.com" aria-label="Email">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                  <span>Gmail</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/shyam-saran-s/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+                    />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Shyamseenu"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.2-3.6a4.6 4.6 0 0 0-.1-3.5s-1-.3-3.2 1.3a11.4 11.4 0 0 0-6 0C6.2 1.5 5.2 1.8 5.2 1.8a4.6 4.6 0 0 0-.1 3.5A5.4 5.4 0 0 0 4 8.9c0 3.5 3 5.5 6 5.5a3.4 3.4 0 0 0-1 2.6V21"
+                    />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://huggingface.co/ShyamSaran-18"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Hugging Face"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path
+                      d="M8.5 10.5v.01M15.5 10.5v.01"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 14.5c1.2 1.2 2.6 1.8 4 1.8s2.8-.6 4-1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <span>Hugging Face</span>
+                </a>
+              </li>
+            </ul>
+
             <h1 class="hero-title">Shyam Saran</h1>
 
             <div class="terminal-chip" aria-live="polite">
@@ -116,14 +199,16 @@
             </div>
 
             <p class="hero-text">
-              Data Science &amp; AI graduate who likes turning messy data into
-              decisions that hold up. Hands-on with Python, SQL and ML — from
-              cleaning a raw table to shipping a dashboard a stakeholder
-              actually opens on Monday morning.
+              Data Science &amp; AI graduate passionate about building practical
+              GenAI solutions. Hands-on with Python, SQL, Machine Learning,
+              LLMs, RAG, LangChain and FastAPI — from working with raw data to
+              building AI applications that solve real-world problems.
             </p>
 
             <div class="hero-actions">
-              <a href="#blog" class="btn btn-primary">Read the blog</a>
+              <a href="#live-projects" class="btn btn-primary"
+                >See live projects</a
+              >
               <a href="resume.pdf" class="btn btn-ghost" download>
                 View résumé
                 <svg
@@ -140,8 +225,8 @@
 
             <ul class="hero-meta">
               <li>
-                <span class="mono">Top skills</span> Generative AI · Predictive
-                Analytics · Data Cleaning
+                <span class="mono">Top skills</span> Generative AI · Machine
+                Learning · Python
               </li>
             </ul>
           </div>
@@ -165,17 +250,8 @@
               </div>
               <span class="file-tag mono">profile.jpg</span>
             </div>
-            <div class="patent-chip mono">Patent — Platepal</div>
           </div>
         </div>
-
-        <a
-          href="#about"
-          class="scroll-cue"
-          aria-label="Scroll to about section"
-        >
-          <span></span>
-        </a>
       </section>
 
       <!-- ================= ABOUT ================= -->
@@ -183,23 +259,24 @@
         <div class="container">
           <div class="section-head fade-in">
             <p class="eyebrow">01 · About</p>
-            <h2 class="section-title">Working with data,<br />end to end.</h2>
+            <h2 class="section-title">Working with GenAI,<br />end to end.</h2>
           </div>
 
           <div class="about-grid">
             <div class="about-copy fade-in">
               <p>
-                I'm a graduate in Data Science &amp; AI with a strong interest
-                in data analysis and data science. I enjoy working with data to
-                find patterns, solve problems, and support better decisions. I
-                have hands-on experience with Python, SQL, Excel and basic data
-                visualization, and I've worked on projects involving data
-                cleaning, analysis and simple machine learning models.
+                I'm an AI &amp; Data Science graduate focused on the
+                intersection of data analysis and Generative AI. Beyond
+                traditional Python, SQL, and predictive modeling, I specialize
+                in building context-aware AI systems using LLMs, vector stores,
+                and automated data pipelines. I love taking messy, unstructured
+                text and engineering it into intelligent, data-driven
+                applications that solve real-world problems.
               </p>
               <p>
-                I'm looking for an entry-level role as a Data Analyst or Data
-                Scientist where I can learn, grow, and contribute to real-world
-                data projects.
+                I'm looking for an entry-level role as a Generative AI Engineer,
+                Machine Learning Engineer, or Data Scientist where I can learn,
+                grow, and contribute to real-world projects.
               </p>
             </div>
 
@@ -207,39 +284,33 @@
               <h3 class="subheading" style="margin-top: 0">Top skills</h3>
               <ul class="tag-list" id="skillsList">
                 <li class="tag">Generative AI</li>
-                <li class="tag">Predictive Analytics</li>
-                <li class="tag">Data Cleaning</li>
+                <li class="tag">Machine Learning</li>
+                <li class="tag">LLMs</li>
                 <li class="tag">Python</li>
                 <li class="tag">SQL</li>
-                <li class="tag">Excel</li>
-                <li class="tag">Power BI</li>
-                <li class="tag">Tableau</li>
+                <li class="tag">LangChain</li>
+                <li class="tag">FastAPI</li>
+                <li class="tag">Pytorch</li>
                 <li class="tag">EDA</li>
                 <li class="tag">Feature Engineering</li>
-                <li class="tag">Machine Learning</li>
               </ul>
 
               <h3 class="subheading">Certifications</h3>
               <ul class="cert-list">
                 <li>
-                  <span class="mono">—</span> Advanced Certification in Data
-                  Science &amp; AI — Besant Technologies, in collaboration with
-                  the Electronics &amp; ICT Academy, IIT Guwahati, supported by
-                  MeitY, Government of India
+                  <span class="mono">2026</span> Advanced Certification in Data
+                  Science &amp; AI — Besant Technologies
                 </li>
                 <li>
-                  <span class="mono">2024</span> Python Full Stack Development
+                  <span class="mono">2025</span> Python Full Stack Development -
+                  A+ CADD Center
                 </li>
-                <li><span class="mono">—</span> Introduction to SQL</li>
+                <li><span class="mono">2024</span> Introduction to SQL</li>
                 <li>
-                  <span class="mono">—</span> Deloitte Australia — Data
-                  Analytics Job Simulation
-                </li>
-                <li>
-                  <span class="mono">—</span> IBM Enterprise Design Thinking
+                  <span class="mono">2024</span> IBM Enterprise Design Thinking
                   Practitioner
                 </li>
-                <li><span class="mono">—</span> Product Management (MBA)</li>
+                <li><span class="mono">2024</span> Product Management (MBA)</li>
               </ul>
             </div>
           </div>
@@ -262,9 +333,7 @@
                 <div class="timeline-card">
                   <span class="mono timeline-date">Sep 2025 — Feb 2026</span>
                   <h4 class="timeline-role">Data Science Intern</h4>
-                  <p class="timeline-org">
-                    BDreamz Global Solutions · Bengaluru
-                  </p>
+                  <p class="timeline-org">BDreamz Global Solutions · Remote</p>
                   <p class="timeline-desc">
                     Built and tuned ML models for real-world classification
                     tasks, ran EDA and feature engineering on complex datasets,
@@ -324,19 +393,6 @@
               <li class="timeline-item fade-in">
                 <div class="timeline-marker"></div>
                 <div class="timeline-card">
-                  <span class="mono timeline-date">Feb 2023</span>
-                  <h4 class="timeline-role">Nano Degree — DSA in Python</h4>
-                  <p class="timeline-org">PrepInsta</p>
-                  <p class="timeline-desc">
-                    Focused study on data structures and algorithms implemented
-                    in Python.
-                  </p>
-                </div>
-              </li>
-
-              <li class="timeline-item fade-in">
-                <div class="timeline-marker"></div>
-                <div class="timeline-card">
                   <span class="mono timeline-date">Nov 2021 — May 2025</span>
                   <h4 class="timeline-role">
                     B.Tech, Artificial Intelligence &amp; Data Science
@@ -346,6 +402,19 @@
                     Four-year undergraduate degree covering the foundations of
                     AI, statistics, and data engineering that underpin
                     everything above.
+                  </p>
+                </div>
+              </li>
+
+              <li class="timeline-item fade-in">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                  <span class="mono timeline-date">Feb 2023</span>
+                  <h4 class="timeline-role">Nano Degree — DSA in Python</h4>
+                  <p class="timeline-org">PrepInsta</p>
+                  <p class="timeline-desc">
+                    Focused study on data structures and algorithms implemented
+                    in Python.
                   </p>
                 </div>
               </li>
@@ -368,111 +437,21 @@
         </div>
       </section>
 
-      <!-- ================= BLOG HUB ================= -->
-      <section class="section" id="blog">
+      <!-- ================= LIVE PROJECTS ================= -->
+      <section class="section" id="live-projects">
         <div class="container">
           <div class="section-head fade-in">
-            <p class="eyebrow">05 · Blog</p>
-            <h2 class="section-title">Notes on AI.</h2>
+            <p class="eyebrow">05 · Live Projects</p>
+            <h2 class="section-title">Things you can actually open.</h2>
             <p class="section-sub">
-              Write-ups on LLMs, applied machine learning, the AI tooling I
-              actually use, and what building with it day-to-day looks like.
+              Deployed builds — click through to use them live, no setup
+              required.
             </p>
           </div>
 
-          <div class="blog-controls fade-in">
-            <div
-              class="filter-group"
-              id="filterGroup"
-              role="group"
-              aria-label="Filter posts by category"
-            >
-              <button
-                class="filter-pill is-active"
-                data-filter="all"
-                type="button"
-              >
-                All
-              </button>
-              <button
-                class="filter-pill"
-                data-filter="LLMs & Agents"
-                type="button"
-              >
-                LLMs &amp; Agents
-              </button>
-              <button class="filter-pill" data-filter="AI Tools" type="button">
-                AI Tools
-              </button>
-              <button
-                class="filter-pill"
-                data-filter="Applied AI"
-                type="button"
-              >
-                Applied AI
-              </button>
-              <button
-                class="filter-pill"
-                data-filter="AI Careers"
-                type="button"
-              >
-                AI Careers
-              </button>
-            </div>
-
-            <div class="search-wrap">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="search-icon"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.3-4.3" />
-              </svg>
-              <input
-                type="search"
-                id="blogSearch"
-                class="search-input"
-                placeholder="Search posts…"
-                aria-label="Search blog posts"
-              />
-            </div>
-          </div>
-
-          <div class="blog-grid" id="blogGrid">
+          <div class="project-grid" id="liveProjectGrid">
             <!-- populated by script.js -->
           </div>
-          <p class="empty-state" id="blogEmpty" hidden>
-            No posts match that search — try a different keyword or category.
-          </p>
-        </div>
-      </section>
-
-      <!-- ================= ARTICLE VIEW (opens in-page when a blog card is clicked) ================= -->
-      <section class="article-view" id="articleView" aria-hidden="true">
-        <div class="container article-container">
-          <button
-            class="btn btn-ghost article-close"
-            id="articleClose"
-            type="button"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              class="btn-icon"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-            Back to blog
-          </button>
-
-          <article id="articleBody">
-            <!-- populated by script.js -->
-          </article>
         </div>
       </section>
 
@@ -502,56 +481,6 @@
                 <a href="mailto:the.shyamsaran@gmail.com"
                   >the.shyamsaran@gmail.com</a
                 >
-              </li>
-              <li>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
-                  />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-                <a
-                  href="https://www.linkedin.com/in/shyam-sarans"
-                  target="_blank"
-                  rel="noopener"
-                  >linkedin.com/in/shyam-sarans</a
-                >
-              </li>
-              <li>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.2-3.6a4.6 4.6 0 0 0-.1-3.5s-1-.3-3.2 1.3a11.4 11.4 0 0 0-6 0C6.2 1.5 5.2 1.8 5.2 1.8a4.6 4.6 0 0 0-.1 3.5A5.4 5.4 0 0 0 4 8.9c0 3.5 3 5.5 6 5.5a3.4 3.4 0 0 0-1 2.6V21"
-                  />
-                </svg>
-                <a
-                  href="https://github.com/Shyamseenu"
-                  target="_blank"
-                  rel="noopener"
-                  >github.com/Shyamseenu</a
-                >
-              </li>
-              <li>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Bengaluru, Karnataka, India
               </li>
             </ul>
           </div>
@@ -636,10 +565,33 @@
             aria-label="GitHub"
             >GitHub</a
           >
-          <a href="#home">Back to top ↑</a>
+          <a
+            href="https://huggingface.co/ShyamSaran-18"
+            target="_blank"
+            rel="noopener"
+            aria-label="Hugging Face"
+            >Hugging Face</a
+          >
         </div>
       </div>
     </footer>
+
+    <!-- ================= BACK TO TOP (floating, bottom-right) ================= -->
+    <button
+      class="back-to-top"
+      id="backToTop"
+      type="button"
+      aria-label="Back to top"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
 
     <script src="script.js"></script>
   </body>
