@@ -34,6 +34,7 @@
           <a href="#education" class="nav-link">Education</a>
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#live-projects" class="nav-link">Live Projects</a>
+          <a href="#achievements" class="nav-link">Achievements</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
@@ -90,6 +91,7 @@
         <a href="#education" class="nav-link">Education</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#live-projects" class="nav-link">Live Projects</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </header>
@@ -437,20 +439,118 @@
         </div>
       </section>
 
-      <!-- ================= LIVE PROJECTS ================= -->
-      <section class="section" id="live-projects">
-        <div class="container">
-          <div class="section-head fade-in">
-            <p class="eyebrow">05 · Live Projects</p>
-            <h2 class="section-title">Things you can actually open.</h2>
-            <p class="section-sub">
-              Deployed builds — click through to use them live, no setup
-              required.
-            </p>
-          </div>
+      <!-- ================= LIVE PROJECTS + ACHIEVEMENTS ================= -->
+      <section class="section live-achieve-section" id="live-projects">
+        <div class="live-achieve-rect">
+          <div class="live-achieve-grid">
+            <!-- Live Projects panel -->
+            <div class="live-achieve-panel">
+              <div class="section-head fade-in">
+                <p class="eyebrow">05 · Live Projects</p>
+                <h2 class="section-title">Things you can actually open.</h2>
+                <p class="section-sub">
+                  Deployed builds — click through to use them live, no setup
+                  required.
+                </p>
+              </div>
 
-          <div class="project-grid" id="liveProjectGrid">
-            <!-- populated by script.js -->
+              <div
+                class="project-grid project-grid--single"
+                id="liveProjectGrid"
+              >
+                <!-- populated by script.js -->
+              </div>
+            </div>
+
+            <!-- Achievements panel -->
+            <div class="live-achieve-panel" id="achievements">
+              <div class="section-head fade-in">
+                <p class="eyebrow">06 · Achievements</p>
+                <h2 class="section-title">Milestones worth mentioning.</h2>
+                <p class="section-sub">
+                  A patent and a model out in the wild — proof this isn't just
+                  coursework.
+                </p>
+              </div>
+
+              <ul class="achievement-list">
+                <li class="achievement-card fade-in">
+                  <div class="project-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    >
+                      <path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                      <path d="M8.2 14.2L6 22l6-3 6 3-2.2-7.8" />
+                    </svg>
+                  </div>
+                  <h3 class="project-title">Patent Publication — Platepal</h3>
+                  <p class="project-desc">
+                    Filed and published a patent for Platepal, an application
+                    conceived and built during the third year of my Bachelor's —
+                    from concept validation through to the official filing.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      href="https://drive.google.com/file/d/1rzgcUxQeyubpNKbd8zSzyOm6vSVwVX4Y/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M14 3h7v7M21 3l-9 9M5 5h6M5 5v14h14v-6" />
+                      </svg>
+                      View publication
+                    </a>
+                  </div>
+                </li>
+
+                <li class="achievement-card fade-in">
+                  <div class="project-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path
+                        d="M8 10.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM16 10.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM8 14.5c1 1.2 2.4 1.8 4 1.8s3-.6 4-1.8"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="project-title">Fine-tuned LLM on Hugging Face</h3>
+                  <p class="project-desc">
+                    Fine-tuned a large language model and published it on
+                    Hugging Face, taking it from data prep through training to a
+                    publicly usable model card.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      href="https://huggingface.co/ShyamSaran-18"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M14 3h7v7M21 3l-9 9M5 5h6M5 5v14h14v-6" />
+                      </svg>
+                      View on Hugging Face
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -459,12 +559,11 @@
       <section class="section section-alt" id="contact">
         <div class="container contact-grid">
           <div class="fade-in">
-            <p class="eyebrow">06 · Contact</p>
+            <p class="eyebrow">07 · Contact</p>
             <h2 class="section-title">Let's talk data.</h2>
             <p class="section-sub">
-              Open to entry-level Data Analyst / Data Scientist roles,
-              collaborations, or just a good conversation about a dataset. The
-              form goes straight to my inbox.
+              Open to entry-level AI, Machine Learning and Data Scientist roles.
+              The form goes straight to my inbox.
             </p>
 
             <ul class="contact-list mono">

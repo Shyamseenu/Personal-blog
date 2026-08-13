@@ -574,6 +574,57 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .project-links svg { width: 15px; height: 15px; }
 
+/* --------------------------- LIVE PROJECTS + ACHIEVEMENTS -------------------- */
+/* Full-bleed rectangle that spans the entire viewport width, split into two
+   panels: Live Projects on the left, Achievements on the right. */
+.live-achieve-section { padding-block: 64px; }
+
+.live-achieve-rect { width: 100%; }
+
+.live-achieve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border-block: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.live-achieve-panel {
+  padding: 64px clamp(24px, 5vw, 80px);
+  border-inline-start: 1px solid var(--border);
+}
+.live-achieve-panel:first-child { border-inline-start: none; }
+
+.project-grid--single { grid-template-columns: 1fr; }
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.achievement-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: box-shadow var(--transition);
+}
+.achievement-card:hover { box-shadow: var(--shadow-lg); }
+.achievement-card .project-icon { margin-bottom: 14px; }
+.achievement-card .project-title { margin-bottom: 8px; }
+.achievement-card .project-desc { margin-bottom: 16px; }
+
+@media (max-width: 860px) {
+  .live-achieve-grid { grid-template-columns: 1fr; }
+  .live-achieve-panel {
+    padding: 40px 28px;
+    border-inline-start: none;
+    border-top: 1px solid var(--border);
+  }
+  .live-achieve-panel:first-child { border-top: none; }
+}
+
 /* -------------------------------- CONTACT ----------------------------------- */
 .contact-grid {
   display: grid;
